@@ -32,18 +32,6 @@ Matrix adt_loadMatrix(Matrix m, int r, int c)
 	return m;
 }
 
-void adt_addMatrix(Matrix m1, Matrix m2, int r, int c) 
-{
-	int i,j;
-	for (i=0;i<r;i++)
-	{
-		for (j=0;j<c;j++)
-		{
-			(m1->val[i][j])+=(m2->val[i][j]);
-		}
-	}
-}
-
 void adt_printMatrix(Matrix m, int r, int c)
 {
 	int i,j;
@@ -55,6 +43,19 @@ void adt_printMatrix(Matrix m, int r, int c)
 		}
 		printf("\n");
 	}
+}
+
+void adt_addMatrix(Matrix m1, Matrix m2, int r, int c) 
+{
+	int i,j;
+	for (i=0;i<r;i++)
+	{
+		for (j=0;j<c;j++)
+		{
+			(m1->val[i][j])+=(m2->val[i][j]);
+		}
+	}
+	adt_printMatrix(m1,r,c);
 }
 
 void adt_equalityMatrix(Matrix m1, Matrix m2, int r, int c)
@@ -72,9 +73,9 @@ void adt_equalityMatrix(Matrix m1, Matrix m2, int r, int c)
 		}
 	}
 	if (f)
-		printf("Matrices are equal\n");
+		printf("Matrices are equal");
 	else
-		printf("Matrices are not equal\n");
+		printf("Matrices are not equal");
 }
 
 void adt_printTranspose(Matrix m, int r, int c)
@@ -94,7 +95,7 @@ void adt_printTrace(Matrix m, int r, int c)
 {
 	if (r!=c)
 	{
-		printf("Non-square matrix: trace does not exist\n");
+		printf("Non-square matrix: trace does not exist");
 		return;
 	}
 	int i,j,res=0;
@@ -113,7 +114,7 @@ void adt_multiplyMatrix(Matrix m1, int r1, int c1, Matrix m2, int r2, int c2)
 {
 	if (c1!=r2)
 	{
-		printf("Dimensions incompatible: cannot multiply\n");
+		printf("Dimensions incompatible: cannot multiply");
 		return;
 	}
 	Matrix res= adt_createMatrix(r1,c2);
@@ -147,11 +148,10 @@ int main() {
 	{
 		if (r1!=r2 || c1!=c2)
 		{
-			printf("Dimensions incompatible: cannot add\n");
+			printf("Dimension mismatch: cannot add");
 			return 0;
 		}
 		adt_addMatrix(m1,m2,r1,c1);
-		adt_printMatrix(m1,r1,c1);
 	}
 	else if (strcmp(op,"Transpose")==0)
 	{
@@ -161,7 +161,7 @@ int main() {
 	{
 		if (r1!=r2 || c1!=c2)
 		{
-			printf("Matrices are not equal\n");
+			printf("Matrices are not equal");
 			return 0;
 		}
 		adt_equalityMatrix(m1,m2,r1,c1);
