@@ -148,7 +148,7 @@ int main() {
 	{
 		if (r1!=r2 || c1!=c2)
 		{
-			printf("Dimension mismatch: cannot add");
+			printf("Dimensions incompatible: cannot add");
 			return 0;
 		}
 		adt_addMatrix(m1,m2,r1,c1);
