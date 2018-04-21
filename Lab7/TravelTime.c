@@ -25,22 +25,23 @@ void insert_edge(int s, int d)
 
 void create_graph()
 {
-    n=12;
-    insert_edge(0,1);
-    insert_edge(1,2);
-    insert_edge(1,4);
-    insert_edge(3,4);
-    insert_edge(4,5);
-    insert_edge(5,6);
-    insert_edge(3,9);
-    insert_edge(4,7);
-    insert_edge(7,10);
-    insert_edge(8,10);
-    insert_edge(9,10);
-    insert_edge(9,11);
-    insert_edge(8,11);
-    insert_edge(5,8);
-    insert_edge(2,4);
+	n=12;
+	insert_edge(0,1);
+	insert_edge(1,2);
+	insert_edge(1,4);
+	insert_edge(3,4);
+	insert_edge(4,5);
+	insert_edge(5,6);
+	insert_edge(3,9);
+	insert_edge(4,7);
+	insert_edge(7,10);
+	insert_edge(8,10);
+	insert_edge(9,10);
+	insert_edge(9,11);
+	insert_edge(8,11);
+	insert_edge(5,8);
+	insert_edge(2,4);
+	insert_edge(3,7);
 }
 
 int isFull()
